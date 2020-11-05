@@ -1,1 +1,2 @@
-<app-our-team [data]="ourTeamData"></app-our-team>
+<app-our-team *ngIf="ourTeamData" [data]="ourTeamData"></app-our-team>
+<p *ngIf="error">{{ error }}</p>

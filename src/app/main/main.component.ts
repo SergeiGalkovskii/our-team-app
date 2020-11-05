@@ -8,12 +8,15 @@ import { OurTeamBlock } from 'src/app/main/main.model';
 })
 export class MainComponent implements OnInit {
   ourTeamData: OurTeamBlock;
+  error: string;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
     if (this.route.snapshot.data['mainData']) {
-      this.ourTeamData = this.route.snapshot.data['mainData'].data[0];
+      const { data, error } = this.route.snapshot.data['mainData'];
+      this.ourTeamData = data && data[0];
+      this.error = error;
     }
   }
 
