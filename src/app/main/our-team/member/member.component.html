@@ -1,0 +1,5 @@
+<img [srcset]="memberImg" [src]="member.imageUrl.w1080" />
+<h3>{{ member.block.title }}</h3>
+<p>{{ member.block.description }}</p>
+<a [href]="'mailto:' + member.block.link">{{ member.block.link }}</a>
+<div>{{ member.block.text }}</div>

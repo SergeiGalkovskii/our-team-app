@@ -1,0 +1,23 @@
+:host {
+  flex: 1;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  height: 400px;
+  object-fit: cover;
+  max-width: 300px;
+}
+
+h3 {
+  color: var(--darkBlue);
+  margin-bottom: 0px;
+}
+
+a {
+  margin-bottom: 0.5rem;
+}

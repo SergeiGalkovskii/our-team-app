@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --darkBlue: #194553;
+  --lightBlue: #64c5da;
+}
+
+a {
+  text-decoration: none;
+  color: var(--lightBlue);
+}
