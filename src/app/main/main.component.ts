@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { OurTeamBlock } from './main.model';
+import { OurTeamBlock } from 'src/app/main/main.model';
 
 @Component({
   selector: 'app-main',

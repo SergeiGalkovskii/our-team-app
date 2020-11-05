@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Blocks } from 'src/app/shared/types';
-import { OurTeamBlock } from '../main.model';
+import { OurTeamBlock } from 'src/app/main/main.model';
 
 @Component({
   selector: 'app-our-team',

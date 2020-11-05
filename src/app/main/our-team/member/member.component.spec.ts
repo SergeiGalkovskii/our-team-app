@@ -1,4 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ImagesetPipe } from 'src/app/shared/pipes/imageset.pipe';
 
 import { MemberComponent } from './member.component';
 
@@ -8,7 +9,7 @@ describe('MemberComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MemberComponent ]
+      declarations: [ MemberComponent, ImagesetPipe ]
     })
     .compileComponents();
   }));
@@ -16,6 +17,17 @@ describe('MemberComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MemberComponent);
     component = fixture.componentInstance;
+    component.member = {
+      imageUrl: {
+        w1080: ''
+      },
+      block: {
+        title: '',
+        description: '',
+        link: '',
+        text: ''
+      }
+    };
     fixture.detectChanges();
   });
 

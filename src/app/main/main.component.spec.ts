@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { ImagesetPipe } from '../shared/pipes/imageset.pipe';
 
 import { MainComponent } from './main.component';
+import { MemberComponent } from './our-team/member/member.component';
+import { OurTeamComponent } from './our-team/our-team.component';
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -8,9 +12,44 @@ describe('MainComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainComponent ]
+      declarations: [MainComponent, OurTeamComponent, MemberComponent, ImagesetPipe],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              data: {
+                'mainData': {
+                  data: [
+                    {
+                      type: '',
+                      id: '',
+                      attributes: {
+                        title: '',
+                        memberCards: {
+                          first: {
+                            imageUrl: {
+                              w1080: ''
+                            },
+                            block: {
+                              title: '',
+                              description: '',
+                              link: '',
+                              text: ''
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

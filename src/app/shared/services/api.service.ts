@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { RequestResponse } from '../types';
+import { RequestResponse } from 'src/app/shared/types';
 import { OurTeamBlock } from 'src/app/main/main.model';
 
 @Injectable({
