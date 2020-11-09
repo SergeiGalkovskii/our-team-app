@@ -1,2 +1,5 @@
-<app-our-team *ngIf="ourTeamData" [data]="ourTeamData"></app-our-team>
-<p *ngIf="error">{{ error }}</p>
+<app-our-team
+  *ngIf="(dataRes$ | async).data"
+  [data]="(dataRes$ | async).data[0]"
+></app-our-team>
+<p *ngIf="(dataRes$ | async).error">{{ (dataRes$ | async).error }}</p>

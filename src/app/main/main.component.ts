@@ -1,23 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { OurTeamBlock } from 'src/app/main/main.model';
+import { RequestResponse } from 'src/app/shared/types';
 
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
 })
 export class MainComponent implements OnInit {
-  ourTeamData: OurTeamBlock;
+  dataRes$: Observable<RequestResponse<OurTeamBlock>>;
   error: string;
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    if (this.route.snapshot.data['mainData']) {
-      const { data, error } = this.route.snapshot.data['mainData'];
-      this.ourTeamData = data && data[0];
-      this.error = error;
-    }
+    this.dataRes$ = this.route.data.pipe(
+      map(data => data.mainData)
+    );
   }
 
 }
