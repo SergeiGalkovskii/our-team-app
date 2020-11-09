@@ -11,7 +11,6 @@ import { RequestResponse } from 'src/app/shared/types';
 })
 export class MainComponent implements OnInit {
   dataRes$: Observable<RequestResponse<OurTeamBlock>>;
-  error: string;
 
   constructor(private route: ActivatedRoute) { }
 
