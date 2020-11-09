@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { MemberCard } from 'src/app/main/main.model';
+import { Member } from 'src/app/shared/models/member';
 
 @Component({
   selector: 'app-member',
@@ -8,6 +8,6 @@ import { MemberCard } from 'src/app/main/main.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MemberComponent {
-  @Input() member: MemberCard;
+  @Input() member: Member;
 
 }

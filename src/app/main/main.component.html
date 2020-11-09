@@ -1,5 +1,10 @@
-<app-our-team
-  *ngIf="(dataRes$ | async).data"
-  [data]="(dataRes$ | async).data[0]"
-></app-our-team>
 <p *ngIf="(dataRes$ | async).error">{{ (dataRes$ | async).error }}</p>
+
+<app-section
+  *ngIf="(dataRes$ | async).data"
+  [title]="(dataRes$ | async).data.title"
+>
+  <ng-template ngFor let-member [ngForOf]="(dataRes$ | async).data.members">
+    <app-member [member]="member"></app-member>
+  </ng-template>
+</app-section>

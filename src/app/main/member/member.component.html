@@ -1,0 +1,5 @@
+<img [srcset]="member.imageUrl | imageset" [src]="member.defaultImg" />
+<h3>{{ member.name }}</h3>
+<p>{{ member.position }}</p>
+<a [href]="'mailto:' + member.email">{{ member.email }}</a>
+<div>{{ member.phone }}</div>
